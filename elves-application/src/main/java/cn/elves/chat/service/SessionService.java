@@ -10,13 +10,13 @@ import cn.elves.chat.entity.res.MsgRes;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MsgService {
+public class SessionService {
 
     private final SessionBuilderFactory sessionBuilderFactory;
 
     private final SessionHandler sessionHandler;
 
-    public MsgService(SessionBuilderFactory sessionBuilderFactory, SessionHandler sessionHandler) {
+    public SessionService(SessionBuilderFactory sessionBuilderFactory, SessionHandler sessionHandler) {
         this.sessionBuilderFactory = sessionBuilderFactory;
         this.sessionHandler = sessionHandler;
     }

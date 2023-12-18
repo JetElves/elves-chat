@@ -14,8 +14,8 @@ public class ChatController {
 
     private final MsgService msgService;
 
-    public ChatController(MsgService msgService, MsgService msgService1) {
-        this.msgService = msgService1;
+    public ChatController(MsgService msgService) {
+        this.msgService = msgService;
     }
 
     @PostMapping("sendMsg")

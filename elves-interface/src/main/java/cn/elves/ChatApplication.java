@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication(scanBasePackages = {"cn.elves"})
+@SpringBootApplication(scanBasePackages = {"cn.elves.adaptor"})
 public class ChatApplication {
 
     public static void main(String[] args) {

@@ -9,12 +9,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class SessionHandler {
 
-    private final SessionBuilderFactory sessionBuilderFactory;
 
     private final ChatModelAdaptor chatModelAdaptor;
 
-    public SessionHandler( ChatModelAdaptor chatModelAdaptor,SessionBuilderFactory sessionBuilderFactory) {
-        this.sessionBuilderFactory = sessionBuilderFactory;
+    public SessionHandler(ChatModelAdaptor chatModelAdaptor) {
         this.chatModelAdaptor = chatModelAdaptor;
     }
 

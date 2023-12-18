@@ -1,6 +1,8 @@
 package cn.elves.entity.req;
 
 public class MsgReq {
+    public MsgReq() {
+    }
 
     private String msg;
 

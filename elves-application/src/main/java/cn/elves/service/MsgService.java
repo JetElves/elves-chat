@@ -1,10 +1,10 @@
 package cn.elves.service;
 
 
-import cn.elves.domain.message.Message;
-import cn.elves.domain.message.MessageBuilder;
-import cn.elves.domain.message.MessageBuilderFactory;
-import cn.elves.domain.message.service.MsgHandler;
+import cn.elves.domain.session.Session;
+import cn.elves.domain.session.SessionBuilder;
+import cn.elves.domain.session.SessionBuilderFactory;
+import cn.elves.domain.session.service.SessionHandler;
 import cn.elves.entity.req.MsgReq;
 import cn.elves.entity.res.MsgRes;
 import org.springframework.stereotype.Service;
@@ -12,24 +12,31 @@ import org.springframework.stereotype.Service;
 @Service
 public class MsgService {
 
-    private final MessageBuilderFactory messageBuilderFactory;
+    private final SessionBuilderFactory sessionBuilderFactory;
 
-    private final MsgHandler msgHandler;
+    private final SessionHandler sessionHandler;
 
-    public MsgService(MessageBuilderFactory messageBuilderFactory, MsgHandler msgHandler) {
-        this.messageBuilderFactory = messageBuilderFactory;
-        this.msgHandler = msgHandler;
+    public MsgService(SessionBuilderFactory sessionBuilderFactory, SessionHandler sessionHandler) {
+        this.sessionBuilderFactory = sessionBuilderFactory;
+        this.sessionHandler = sessionHandler;
     }
 
     public MsgRes sendMsg(MsgReq msgReq) {
-        MessageBuilder messageBuilder = messageBuilderFactory.create();
+        SessionBuilder sessionBuilder = sessionBuilderFactory.create();
 
-        Message reqMessage = messageBuilder.reqMsg(msgReq.getMsg())
+        Session reqSession = sessionBuilder.reqMsg(msgReq.getMsg())
                 .sessionId(msgReq.getSessionId())
                 .build();
 
-        Message resMessage = msgHandler.handleSendedMsg(reqMessage);
+        Session resSession = sessionHandler.handleSendedMsg(reqSession);
 
-        return null;
+        return buildMsgRes(resSession);
+    }
+
+    private static MsgRes buildMsgRes(Session session){
+        MsgRes msgRes = new MsgRes();
+        msgRes.setMsg(session.getResMsg());
+        msgRes.setSessionId(session.getSessionId());
+        return msgRes;
     }
 }

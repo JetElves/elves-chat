@@ -1,4 +1,4 @@
-package cn.elves.domain.message.exception;
+package cn.elves.domain.session.exception;
 
 public class SessionException extends RuntimeException {
 

@@ -1,6 +1,6 @@
-package cn.elves.domain.message;
+package cn.elves.domain.session;
 
-public class Message {
+public class Session {
 
     private String reqMsg;
 
@@ -32,7 +32,4 @@ public class Message {
         this.sessionId = sessionId;
     }
 
-    public Message sendMsg() {
-        return null;
-    }
 }

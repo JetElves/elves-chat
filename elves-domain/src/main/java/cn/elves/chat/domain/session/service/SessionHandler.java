@@ -3,6 +3,7 @@ package cn.elves.chat.domain.session.service;
 
 import cn.elves.chat.domain.session.Session;
 import cn.elves.chat.domain.session.repository.ChatModelAdaptor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component

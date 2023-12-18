@@ -13,9 +13,9 @@ import java.util.HashMap;
 @Repository
 public class BaseChatModelAdaptor implements ChatModelAdaptor {
 
-    private final String HOST = "https://chat.weixk.com/";
+    private final String HOST = "https://chat.weixk.com";
 
-    private final String CHAT_INTERFACE = "chat";
+    private final String CHAT_INTERFACE = "/v1/chat";
 
     @Resource
     private RestTemplate restTemplate;

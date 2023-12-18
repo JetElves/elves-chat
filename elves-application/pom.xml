@@ -33,6 +33,12 @@
 
         <dependency>
             <groupId>cn.elves</groupId>
+            <artifactId>elves-infrastructure</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.elves</groupId>
             <artifactId>elves-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

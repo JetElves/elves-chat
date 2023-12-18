@@ -20,7 +20,6 @@ public class ChatController {
 
     @PostMapping("sendMsg")
     public APIResponse<MsgRes> sendMsg(@RequestBody MsgReq msgReq) {
-
         return APIResponse.success(msgService.sendMsg(msgReq));
     }
 
